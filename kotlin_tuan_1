@@ -1,0 +1,61 @@
+fun bai1(DNA: List<Char>)
+{
+    for(element in DNA)
+    {
+        when(element)
+    	{
+            'G' -> println('C');
+            'C' -> println('G');
+            'T' -> println('A');
+            'A' -> println('U');
+            else -> println("Khong co RNA tuong ung");
+    	} 
+    }
+}
+
+fun bai2(name:String) {
+	var arr = name.split(" ");
+	for(x in arr)
+    {
+        if(x.first().equals(x.first().toLowerCase()))
+        {
+            continue
+        }
+        else
+        {
+            print(x.first());
+        }
+    }
+}
+
+fun bai3(N: Int){ 
+    var factors = mutableListOf<Int>(1)
+    for (i in 2 until N+1){
+        if(N%i==0){
+            if(i==3||i==5||i==7){
+            	factors.remove(1)
+            	factors.add(i)
+            }
+        }
+    }
+    val result = factors.fold(0, { total: Int, i: Int ->total + i})
+    //print(result)
+    when(result){
+        1-> print(N.toString())
+        3-> print("Pling")
+        5-> print("Plang")
+        7-> print("Plong")
+        8-> print("PlingPlang")
+        10->print("PlingPlong")
+        12->print("PlangPlong")
+        15->print("PlingPlangPlong")
+    }
+}
+	
+fun main()
+{
+    var DNA = listOf('G', 'C', 'T', 'A', 'B');
+    //bai1(DNA);
+    //bai2("United States of America")
+    bai3(30)
+}
