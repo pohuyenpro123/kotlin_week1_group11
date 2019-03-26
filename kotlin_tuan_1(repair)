@@ -1,0 +1,55 @@
+fun bai1(DNA: String):String
+{
+    var a:String=""
+    for(element in DNA)
+    {
+        when(element)
+    	{
+         'G'->a=a+"C"
+         'C'->a=a+"G"
+         'T'->a=a+"A"
+         'A'->a=a+"U"
+          else -> return "khong co chuoi ARN tuong ung"
+            
+    	} 
+    }
+    return a
+}
+fun bai2(name:String): String {
+	var arr = name.split(" ");
+	for(x in arr)
+    {
+        if(x.first().equals(x.first().toLowerCase()))
+        {
+            continue
+        }
+        else
+        {
+            print(x.first());
+        }
+    }
+    return ""
+}
+
+
+fun bai3(somenumber:Int):String{
+    var result:String=""
+    if(somenumber%3 == 0)
+    	result+="Pling"
+    if(somenumber%5 == 0)
+   	 	result+="Plang"
+    if(somenumber%7 == 0)
+    	result+="Plong"
+	result = if (result.equals("")) somenumber.toString() else result
+    return result
+}     
+    
+
+	
+fun main()
+{
+    var g=bai1("ATCG")
+    println(g) 
+    println(bai2("United States of America"))
+    println(bai3(30))
+}
